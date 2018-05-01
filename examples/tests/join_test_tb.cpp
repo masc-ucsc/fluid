@@ -17,13 +17,13 @@ VerilatedVcdC* tfp       = 0;
 
 void do_terminate() {
 #ifdef TRACE
-      tfp->dump(global_time);
+  tfp->dump(global_time);
 #endif
 #ifdef TRACE
   tfp->close();
 #endif
 
-  printf("simulation finished at cycle %lld\n",(long long)global_time);
+  printf("simulation finished at cycle %lld\n", (long long)global_time);
 
   exit(0);
 }
@@ -124,7 +124,6 @@ void tb_set_inputs(Vjoin_test *top) {
     top->inp_b = inpb_list.back().inp_b;
   }
 
-
 #ifdef DEBUG_TRACE
   if (top->inp_aValid)
     printf("1. a=%d inp_aRetry=%d inp_aValid=%d reset=%d\n",top->inp_a, top->inp_aRetry, top->inp_aValid, top->reset);
@@ -160,7 +159,6 @@ void tb_check_outputs(Vjoin_test *top) {
   out_list.pop_back();
 }
 
-
 int main(int argc, char **argv, char **env) {
   int i;
   int clk;
@@ -178,8 +176,7 @@ int main(int argc, char **argv, char **env) {
   printf("My RAND Seed is %d\n",sim_seed);
 
 #ifdef TRACE
-  // init trace dump
-  Verilated::traceEverOn(true);
+  Verilated::traceEverOn(true); // init trace dump
   tfp = new VerilatedVcdC;
 
   top->trace(tfp, 99);

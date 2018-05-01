@@ -62,7 +62,7 @@ module fflop
      );
 
 `ifdef USE_SELF_W2R1
-  // uses W2R1 implementation from
+  // A Flop based (not latch) variation on W2R1 implementation from
   // http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.99.9778&rep=rep1&type=pdf
 
   // {{{1 SELF IMPLEMENTATION
